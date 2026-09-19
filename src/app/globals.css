@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default palette - Warm and trustworthy */
+  --background: #fafaf9; /* stone-50 */
+  --foreground: #1c1917; /* stone-900 */
+  --primary: #ea580c; /* orange-600 */
+  --primary-foreground: #ffffff;
+  --secondary: #fef08a; /* yellow-200 */
+  --secondary-foreground: #854d0e; /* yellow-800 */
+  --muted: #f5f5f4; /* stone-100 */
+  --muted-foreground: #44403c; /* stone-700 (darkened for contrast) */
+  --card: #ffffff;
+  --card-foreground: #1c1917;
+  --border: #e7e5e4; /* stone-200 */
+  --danger: #ef4444; /* red-500 */
+  --danger-foreground: #ffffff;
+  --success: #22c55e; /* green-500 */
+  --success-foreground: #ffffff;
+  
+  --radius: 1rem;
+}
+
+[data-high-contrast="true"] {
+  --background: #000000;
+  --foreground: #ffffff;
+  --primary: #ffff00;
+  --primary-foreground: #000000;
+  --secondary: #ffffff;
+  --secondary-foreground: #000000;
+  --muted: #111111;
+  --muted-foreground: #dddddd;
+  --card: #000000;
+  --card-foreground: #ffffff;
+  --border: #ffffff;
+  --danger: #ff0000;
+  --danger-foreground: #ffffff;
+  --success: #00ff00;
+  --success-foreground: #000000;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: font-size 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Base font sizes */
+html {
+  font-size: 16px; /* Base for rem */
+}
+
+/* User-controlled font sizes */
+[data-text-size="normal"] { font-size: 100%; }
+[data-text-size="large"] { font-size: 125%; }
+[data-text-size="extralarge"] { font-size: 150%; }
+
+/* Ensure interactive elements are large enough */
+button, a, input, select, textarea {
+  min-height: 52px;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 4px solid var(--primary);
+  outline-offset: 4px;
+}
